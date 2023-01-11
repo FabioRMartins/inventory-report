@@ -4,8 +4,7 @@ from inventory_report.reports.simple_report import SimpleReport
 
 class CompleteReport(SimpleReport):
     @staticmethod
-    def generate(file):    
-
+    def generate(file):
         report = SimpleReport.generate(file)
 
         empresa = [item["nome_da_empresa"] for item in file]
