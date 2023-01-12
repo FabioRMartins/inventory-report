@@ -5,6 +5,7 @@ from inventory_report.reports.simple_report import SimpleReport
 class CompleteReport(SimpleReport):
     @staticmethod
     def generate(file):
+
         report = SimpleReport.generate(file)
 
         empresa = [item["nome_da_empresa"] for item in file]
@@ -12,6 +13,5 @@ class CompleteReport(SimpleReport):
 
         report += "\nProdutos estocados por empresa:\n"
         for nome_empresa, quantidade in contagem_estoque.items():
-            report += f" - {nome_empresa}: {quantidade}\n"
-
+            report += f"- {nome_empresa}: {quantidade}\n"
         return report
